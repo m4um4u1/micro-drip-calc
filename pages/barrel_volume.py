@@ -4,6 +4,8 @@ import numpy as np
 st.markdown('## Volumen eines Fasses berechnen')
 st.sidebar.markdown('## Volumen eines Fasses berechnen')
 
+st.write('Berechne das Volumen eines Fasses mit verschiedenen Abmessungen')
+st.write('VORSICHT: Fässer haben viele verschiedene Formen und Abmessungen, die hier nicht alle berücksichtigt werden können. Die Berechnung ist nur als grobe Orientierung zu verstehen.')
 # Barrel dimensions and volume
 st.write('Gib die Abmessungen des Fasses ein')
 barrel_width_upper = st.number_input(
