@@ -33,7 +33,7 @@ st.markdown('### Strömungsgeschwindigkeit')
 
 st.write('Berechne die Strömungsgeschwindigkeit, wenn der Volumenstrom und der Durchmesser des Rohres bekannt ist')
 
-tube_diameter = st.number_input('Durchmesser des Rohres (cm)', min_value=0.0, value=1.2)
+tube_diameter = st.number_input('Durchmesser des Rohres (cm)', min_value=0.0, value=1.20)
 
 # Convert to meters
 tube_diameter = tube_diameter / 100
