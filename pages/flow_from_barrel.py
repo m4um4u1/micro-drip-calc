@@ -32,9 +32,9 @@ st.write('Der Volumenstrom aus dem Fass ist', barrel_volume_flow_liters, 'l/min'
 
 st.markdown('### Strömungsgeschwindigkeit')
 
-st.write('Berechne die Strömungsgeschwindigkeit, wenn der Volumenstrom und der Durchmesser des Rohres bekannt ist')
+st.write('Die Strömungsgeschwindigkeit, oder auch Fließgeschwindigkeit gibt die Geschwindigkeit einer Strömung an. Für die Berechnung des Volumenstroms wird die Strömungsgeschwindigkeit und Rohrquerschnitt benötigt.')
 
-tube_diameter = st.number_input('Durchmesser des Rohres (cm)', min_value=0.0, value=1.0)
+tube_diameter = st.number_input('Durchmesser des Rohres/Schlauchs (cm)', min_value=0.0, value=1.0)
 
 # Convert to meters
 tube_diameter = tube_diameter / 100
