@@ -54,3 +54,8 @@ tube_density = st.number_input('Dichte des Mediums (kg/m3)', min_value=0.0, valu
 barrel_mass_flow = barrel_volume_flow_qubic * tube_density
 
 st.write('Der Massenstrom aus dem Fass ist', barrel_mass_flow, 'kg/s')
+
+st.markdown('### Kontinuitätsgleichung')
+
+st.write('Die Kontinuitätsgleichung für den Volumenstrom besagt, dass ein Volumenstrom (Strömung) in einer Leitung immer konstant ist. Dies ändert sich auch nicht, wenn sich der Querschnitt der Leitung verändert. Einfach gesagt, was vorne reinkommt, muss auch hintern wieder herauskommen.')
+st.image('images/continuity.png')
