@@ -18,7 +18,7 @@ st.write('Zur berechnung wird die Rohrrauheit von 0.03m verwendet diese entspric
 pipe_diameter = pipe_diameter / 1000
 
 # Calculate the loss of pressure in the pipe
-pipe_pressure_loss = (0.03 * pipe_length * 1000 * flow_speed) / (pipe_diameter * 2)
+pipe_pressure_loss = (0.03 * pipe_length * 1000 * np.power(flow_speed, 2)) / (pipe_diameter * 2)
 
 # Convert to Bar
 pipe_pressure_loss = pipe_pressure_loss / 100000
