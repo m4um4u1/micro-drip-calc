@@ -39,6 +39,6 @@ hole_spacing = pipe_length / holes_per_meter
 # Convert to cm
 hole_spacing = hole_spacing * 100
 
-st.write('Der Abstand zwischen den Löchern ist', hole_spacing, 'cm')
+st.write('Der Abstand zwischen den Löchern sollte', hole_spacing, 'cm haben')
 
 
