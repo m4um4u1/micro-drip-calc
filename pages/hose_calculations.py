@@ -12,7 +12,7 @@ st.write('Berechne die Druckverluste in einem Schlauch mit verschiedenen Durchme
 st.write('Gib die Schlauchdurchmesser und Längen ein')
 pipe_diameter = st.number_input('Schlauchdurchmesser (mm)', min_value=0.0, value=13.0)
 pipe_length = st.number_input('Schlauchlänge (m)', min_value=0.0, value=10.0)
-flow_speed = st.number_input('Strömungsgeschwindigkeit (m/s)', min_value=0.0, value=0.50)
+flow_speed = st.number_input('Strömungsgeschwindigkeit (m/s)', min_value=0.0, value=1.0)
 
 # Convert to meters
 pipe_diameter = pipe_diameter / 1000
