@@ -32,7 +32,7 @@ st.write('Berechne die Lochung für Microdrip Schläuche')
 st.write('Gib die Länge vom Schlauch ein und wie viele Löcher pro Meter')
 st.write('Die Länge wird von oben übernommen')
 
-holes_per_meter = st.number_input('Löcher pro Meter', min_value=0.0, value=10.0)
+holes_per_meter = st.number_input('Löcher pro Meter', min_value=0.0, value=50.0)
 
 # Calculate the space between the holes in the pipe
 hole_spacing = pipe_length / holes_per_meter
