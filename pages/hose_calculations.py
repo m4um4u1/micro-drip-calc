@@ -13,7 +13,7 @@ st.write('Gib die Schlauchdurchmesser und Längen ein')
 pipe_diameter = st.number_input('Schlauchdurchmesser (mm)', min_value=0.0, value=13.0)
 pipe_length = st.number_input('Schlauchlänge (m)', min_value=0.0, value=10.0)
 flow_speed = st.number_input('Strömungsgeschwindigkeit (m/s)', min_value=0.0, value=1.0)
-
+st.write('Zur berechnung wird die Rohrrauheit von 0.03m verwendet diese entspricht einem Gartenschlauch')
 # Convert to meters
 pipe_diameter = pipe_diameter / 1000
 
@@ -23,6 +23,7 @@ pipe_pressure_loss = (0.03 * pipe_length * 1000 * flow_speed) / (pipe_diameter *
 # Convert to Bar
 pipe_pressure_loss = pipe_pressure_loss / 100000
 st.write('Der Druckverlust im Schlauch ist', pipe_pressure_loss, 'Bar')
+
 
 st.markdown('### Microdrip Lochung')
 st.write('Berechne die Lochung für Microdrip Schläuche')
