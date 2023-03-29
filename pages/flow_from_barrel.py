@@ -1,32 +1,44 @@
 import streamlit as st
 import numpy as np
 
-st.markdown('## Flow from barrel')
-st.sidebar.markdown('## Flow from barrel')
+st.markdown('## Strömungsmessung')
+st.sidebar.markdown('## Strömungsmessung')
 
-st.write('Calculate the flow rate from the barrel through the tap in liters per minute')
-barrel_diameter = st.number_input(
-    'Barrel diameter (cm)', min_value=0.0, value=1.0)
-barrel_height = st.number_input(
-    'Water height from tap to top (cm)', min_value=0.0, value=1.0)
-barrel_tap_diameter = st.number_input(
-    'Barrel tap diameter (cm)', min_value=0.0, value=1.0)
+st.write('Berechne die Durchflussmenge mit verschiedenen Messmethoden')
 
+st.markdown('### Volumenstrom')
+# Flow from barrel knowing volume and time to drain
+st.write('Berechne den Volumenstrom/Durchflussmänge aus einem Fass, wenn das Volumen des Fasses und die Zeit bis das Fass leer ist bekannt ist')
 
-bd_meter = barrel_diameter / 100
-btd_meter = barrel_tap_diameter / 100
-bh_meter = barrel_height / 100
+barrel_volume = st.number_input('Fassvolumen (l)', min_value=0.0, value=180.0)
+barrel_time_to_drain = st.number_input('Zeit bis das Fass leer ist (min)', min_value=0.0, value=60.0)
 
-bd_square_meter = np.pi * ((bd_meter/2)**2)
-btd_square_meter = np.pi * ((btd_meter/2)**2)
+# Convert to m3
+barrel_volume = barrel_volume / 1000
 
-barrel_tap_flow_rate = (btd_square_meter / bd_square_meter) * \
-    np.sqrt(2 * 9.81 * bh_meter)
+# Convert time to seconds
+barrel_time_to_drain = barrel_time_to_drain * 60
 
-st.write('The flow speed is', barrel_tap_flow_rate, 'm/s')
+# Calculate the flow from the barrel in m3/h
+barrel_volume_flow_qubic = barrel_volume / barrel_time_to_drain 
 
-btfr_liter_per_minute = barrel_tap_flow_rate * btd_square_meter * 60 * 1000
+st.write('Der Volumenstrom aus dem Fass ist', barrel_volume_flow_qubic, 'm3/h')
 
-st.write('The flow rate is', btfr_liter_per_minute, 'liters per minute')
+# Convert to l/min
+barrel_volume_flow_liters = barrel_volume_flow_qubic * 1000 * 60
 
-st.write('or', btfr_liter_per_minute * 1000, 'ml per minute')
+st.write('Der Volumenstrom aus dem Fass ist', barrel_volume_flow_liters, 'l/min')
+
+st.markdown('### Strömungsgeschwindigkeit')
+
+st.write('Berechne die Strömungsgeschwindigkeit, wenn der Volumenstrom und der Durchmesser des Rohres bekannt ist')
+
+tube_diameter = st.number_input('Durchmesser des Rohres (cm)', min_value=0.0, value=1.2)
+
+# Convert to meters
+tube_diameter = tube_diameter / 100
+
+# Calculate the flow speed from the barrel 
+barrel_flow_speed = (barrel_volume_flow_qubic * 4) / (np.power(tube_diameter, 2) * np.pi)
+
+st.write('Die Strömungsgeschwindigkeit aus dem Fass ist', barrel_flow_speed, 'm/s')

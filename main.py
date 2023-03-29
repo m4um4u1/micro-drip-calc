@@ -1,10 +1,15 @@
 import streamlit as st
-import pandas as pd
-import numpy as np
 
-st.markdown('## Home')
-st.sidebar.markdown('## Home')
 
-st.title('Microdrip Calculator')
+st.markdown('## Startseite')
+st.sidebar.markdown('## Startseite')
 
-st.write('With this app you can calculate different things related to microdrip irrigation or even just want to know how much pressure you need to get a certain flow rate from a tap connected to a barrel')
+st.write('Mit diesem Tool kannst du die Strömunsggeschwindigkeit, den Druckverlust und die Durchflussmenge in deinem System berechnen')
+
+st.write('Für die Berechnung benötigst du folgende Daten:')
+st.write('1. Durchmesser des Rohres/Schlauches')
+st.write('2. Länge des Rohres/Schlauches')
+st.write('3. Wie lange brauch das Fass um leer zu sein')
+st.write('4. Wie groß ist das Fass')
+
+st.write('Wähle eine Seite im Menü links aus')
